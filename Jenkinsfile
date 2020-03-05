@@ -27,16 +27,10 @@ pipeline {
 				sh 'mvn war:war'
 			}
 		  }
-           	 
-	    	stage('Deploy2')
-			{
-			  steps{
-					sh 'mvn deploy'
-				}
-			}
+           	
 	    stage('Build') {
 			steps {
-			    sh 'docker build -t image:0.1 .'
+			    sh 'sudo docker build -t image:0.1 .'
 			}
 		    }
 
