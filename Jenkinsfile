@@ -1,10 +1,13 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'maven1' 
+    }
     stages {
         stage('Checkout Stage'){
            		steps{
                   		git url: 'https://github.com/shifali0102/jenkinsaws.git'
+				sh 'mvn --version'
               			sh 'mvn clean'
 	       			}
           		}
