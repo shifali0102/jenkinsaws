@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Stage'){
            		steps{
-                  		git url: 'https://github.com/Shifali-Srivastava/my-app.git'
+                  		git url: 'https://github.com/shifali0102/jenkinsaws.git'
               			sh 'mvn clean'
 	       			}
           		}
