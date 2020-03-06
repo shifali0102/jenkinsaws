@@ -31,6 +31,7 @@ pipeline {
 	    stage('Build') {
 			steps {
 				sh 'pwd'
+				sh 'whoami'
 				sh 'ls'
 			    sh 'sudo docker build -t image:0.1 .'
 			}
