@@ -33,7 +33,7 @@ pipeline {
 				sh 'pwd'
 				sh 'whoami'
 				sh 'ls'
-			    sh 'sudo docker build -t image:0.1 .'
+			    sh 'docker build -t image:0.1 .'
 			}
 		    }
 
