@@ -12,6 +12,22 @@ pipeline {
 		      		 sh 'mvn clean'
 	       			}
              		}
+	       stage('Compile Stage'){
+          		 steps{
+		      		 sh 'mvn compile'
+	       			}
+             		}
+	    	stage('Testing Stage'){
+	  		steps{
+		  		sh 'mvn test'
+				 }
+			}
+	    		
+		 stage('Package'){
+          		steps{
+				sh 'mvn war:war'
+			}
+		  }
 	   	
 
     }
