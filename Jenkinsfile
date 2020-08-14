@@ -25,7 +25,7 @@ pipeline {
 		  }
 	    stage('Build Docker Image' ) {
 			steps {
-			    sh 'docker build -t my-app:0.1 .'
+			    sh 'docker build -t shifalisri0102/my-app:0.1 .'
 			    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
       				sh 'docker push shifalisri0102/my-app:0.1'
 			    }
