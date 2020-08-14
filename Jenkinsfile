@@ -23,6 +23,11 @@ pipeline {
 				sh 'mvn war:war'
 			}
 		  }
+	    stage('Build Docker Image' ) {
+			steps {
+			    sh 'docker build -t image:0.1 .'
+			}
+		    }
 	   	
 
     }
