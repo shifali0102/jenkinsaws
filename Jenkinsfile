@@ -5,9 +5,13 @@ pipeline {
         	stage('Checkout Stage'){
            		steps{
                   		git url: 'https://github.com/shifali0102/jenkinsaws.git'
-				
-	       			}
+			     }
           		}
+	        stage('Clean Stage'){
+          		 steps{
+		      		 sh 'mvn clean'
+	       			}
+             		}
 	   	
 
     }
