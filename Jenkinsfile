@@ -16,12 +16,7 @@ pipeline {
           		 steps{
 		      		 sh 'mvn compile'
 	       			}
-             		}
-	    	stage('Testing Stage'){
-	  		steps{
-		  		sh 'mvn test'
-				 }
-			}
+	       }
 	    		
 		 stage('Package'){
           		steps{
