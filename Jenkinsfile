@@ -32,7 +32,18 @@ pipeline {
 			    }
 			}
 		    }
-	   	
+	     stage('Using kubernetes'){
+		   steps{
+	   	withKubeConfig(caCertificate: '', 
+			       clusterName: 'devcluster.k8s.local', 
+			       contextName: 'devcluster.k8s.local', 
+			       credentialsId: 'mykubeconfig', 
+			       namespace: '', 
+			       serverUrl: ' https://api-devcluster-k8s-local-2a2k6f-803457682.ap-south-1.elb.amazonaws.com') {
+    					sh 'kubectl get nodes'
+                        }
+		   }
+	     }
 
     }
 }
