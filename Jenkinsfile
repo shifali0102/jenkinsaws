@@ -42,7 +42,7 @@ pipeline {
 			       serverUrl: ' https://api-devcluster-k8s-local-2a2k6f-803457682.ap-south-1.elb.amazonaws.com') {
     					
 			                sh 'kubectl describe svc javaappservice'
-			                
+			                sh 'curl http://ec2-13-233-17-196.ap-south-1.compute.amazonaws.com:31426/myweb-0.0.5/'
                         }
 		   }
 	     }
