@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+      name: javaapp
+      labels:
+        app: java
+spec:
+    replicas: 1
+    selector:
+      matchLabels:
+         app: java
+    template:
+       metadata:
+             name: javaapp
+             labels:
+               app: java
+       spec:
+          containers:
+          - image: shifalisri0102/my-app:0.1
+
+            imagePullPolicy: Always
+            name: warfile
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: javaappservice
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 80
+      targetPort: 8080
+    selector:
+      app: java
