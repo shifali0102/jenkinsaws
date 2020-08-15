@@ -28,6 +28,7 @@ pipeline {
 			    sh 'docker build -t shifalisri0102/my-app:0.1 .'
 			    withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
       				sh 'docker push shifalisri0102/my-app:0.1'
+				    
 			    }
 			}
 		    }
