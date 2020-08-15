@@ -41,6 +41,8 @@ pipeline {
 			       namespace: '', 
 			       serverUrl: ' https://api-devcluster-k8s-local-2a2k6f-803457682.ap-south-1.elb.amazonaws.com') {
     					sh 'kubectl get nodes'
+			                sh 'kubectl describe svc javaappservice'
+			                
                         }
 		   }
 	     }
